@@ -1,0 +1,226 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg-body {
+            background-color: #5e5d5d !important;
+        }
+    </style>
+</head>
+
+<body class="bg-body">
+    <div>
+
+        <div style="padding-top:0px;height: 100vh;overflow-x: hidden;overflow-y: hidden;">
+            <div class="card container mt-5">
+            <div class="card-body p-3">
+
+
+                <div class="ms-2 mb-4 mt-1 h5"><i class="bx bxs-bar-chart-alt-2"></i> <span>Dashboard mês de </span> <div class="dropdown" style="display: inline-block;" id="changeMetricis">
+
+                  </div>
+                </div>
+
+                <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="dash-atendimentos-tab" data-bs-toggle="pill" data-bs-target="#dash-atendimentos" type="button" role="tab" aria-controls="dash-atendimentos" aria-selected="true"><div class="icon icon-shape-metrics icon-xxs shadow border-radius-sm bg-gradient-metrics text-center"><i class='bx bx-chat'></i></div> <span>Atendimentos</span> </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="dash-crm-tab" data-bs-toggle="pill" data-bs-target="#dash-crm" type="button" role="tab" aria-controls="dash-crm" aria-selected="false"><div class="icon icon-shape-metrics icon-xxs shadow border-radius-sm bg-gradient-metrics text-center"> <i class='bx bx-desktop'></i></div><span>CRM (Fluxo de negócios)</span> </button>
+                    </li>
+
+                  <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dash-movimentacoes-tab" data-bs-toggle="pill" data-bs-target="#dash-movimentacoes" type="button" role="tab" aria-controls="dash-movimentacoes" aria-selected="false"><div class="icon icon-shape-metrics icon-xxs shadow border-radius-sm bg-gradient-metrics text-center"><i class="bx bxs-user-detail"></i></div><span>Movimentaçõe</span></button>
+                      </li>
+
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="dash-atendimentos" role="tabpanel" aria-labelledby="dash-atendimentos-tab" tabindex="0">
+
+
+            <div>
+                <div>
+
+
+
+
+
+                  <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+                  <div class="chart chart-atm">
+                  <canvas id="chart-bars-atm" class="chart-canvas" height="170"></canvas>
+                  </div>
+                  </div>
+
+
+                  <div class="container border-radius-lg">
+                    <div class="row">
+                      <div class="col-3 py-3 ps-0">
+                        <div class="d-flex mb-2">
+                          <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
+
+
+                          </div>
+            <p class="text-xs mt-1 mb-0 font-weight-bold" id="atendimento">Atendimentos</p>
+                        </div>
+
+                        <h4 class="font-weight-bolder count_atm_atendimentos">0</h4>
+
+                      </div>
+                      <div class="col-3 py-3 ps-0">
+                        <div class="d-flex mb-2">
+                          <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
+
+                          </div>
+                          <p class="text-xs mt-1 mb-0 font-weight-bold" id="finalizado">Finalizados</p>
+                        </div>
+                        <h4 class="font-weight-bolder count_atm_finalizados">0</h4>
+
+                      </div>
+                      <div class="col-3 py-3 ps-0">
+                        <div class="d-flex mb-2">
+                          <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
+
+                          </div>
+                          <p class="text-xs mt-1 mb-0 font-weight-bold" id="aberto">Em aberto</p>
+                        </div>
+                        <h4 class="font-weight-bolder count_atm_emaberto">0</h4>
+
+                      </div>
+                      <div class="col-3 py-3 ps-0">
+                        <div class="d-flex mb-2">
+                          <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
+
+                          </div>
+                          <p class="text-xs mt-1 mb-0 font-weight-bold" id="tempo">Tempo médio por atendimento</p>
+                        </div>
+                        <h4 class="font-weight-bolder count_atm_tempomedio">00:00:00</h4>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="dash-crm" role="tabpanel" aria-labelledby="dash-crm-tab" tabindex="0">
+
+          <div>
+            <div>
+
+
+
+
+              <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+                <div class="chart chat-crm">
+                  <canvas id="chart-bars-crm" class="chart-canvas" height="212" width="569" style="display: block; box-sizing: border-box; height: 169.6px; width: 455.2px;"></canvas>
+                </div>
+              </div>
+              <div class="container border-radius-lg">
+                <div class="row">
+                    <div class="col-3 py-3 ps-0">
+                        <div class="d-flex mb-2">
+                          <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
+
+                          </div>
+                          <p class="text-xs mt-1 mb-0 font-weight-bold" id="negocios">Negócios iniciados</p>
+                        </div>
+                        <h4 class="font-weight-bolder count_crm_negociosiniciados">0</h4>
+
+                      </div>
+
+                  <div class="col-3 py-3 ps-0">
+                    <div class="d-flex mb-2">
+                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
+
+
+                      </div>
+        <p class="text-xs mt-1 mb-0 font-weight-bold" id="ganhos">Ganhos</p>
+                    </div>
+
+                    <h4 class="font-weight-bolder count_crm_ganhosqtd">0 </h4>
+
+                  </div>
+                  <div class="col-3 py-3 ps-0">
+                    <div class="d-flex mb-2">
+                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
+                                             </div>
+                      <p class="text-xs mt-1 mb-0 font-weight-bold" id="pedidos">Perdidos</p>
+                    </div>
+                    <h4 class="font-weight-bolder count_crm_percasqtd">0</h4>
+
+                  </div>
+
+                  <div class="col-3 py-3 ps-0">
+                    <div class="d-flex mb-2">
+                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
+
+                      </div>
+                      <p class="text-xs mt-1 mb-0 font-weight-bold" id="duracao">Duração média por negócio</p>
+                    </div>
+                    <h4 class="font-weight-bolder count_crm_tempomedio">00:00:00</h4>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="dash-movimentacoes" role="tabpanel" aria-labelledby="dash-movimentacoes-tab" tabindex="0">
+
+                        <div class="row">
+                             <div class="col-6">
+                                     <div class="card mb-4">
+                                     <div class="card-header">
+                                     <h5 class="my-0 font-weight-normal" id="atendimetos-finalizados">Atendimentos finalizados (<span class="count_atmf">0</span>)</h5>
+                                     </div>
+                                     <div class="card-body">
+                                     <ul class="list-group mt-0 mb-4" id="dashboard-movimentacoes-atm" style="overflow-x: hidden;overflow-y: scroll;height: 43vh;">
+                                         <li class="list-group-item"><span class="" id="transferir-atendimento">Transferir entre atendentes </span></li>
+                                     </ul>
+                                     <div class="d-grid gap-2">
+                                     </div>
+                                     </div>
+                                     </div>
+                             </div>
+                             <div class="col-6">
+                             <div class="card mb-4">
+                             <div class="card-header">
+                             <h5 class="my-0 font-weight-normal" id="card-encerrado">Cards encerrados (<span class="count_crmf">0</span>)</h5>
+                             </div>
+                             <div class="card-body">
+                             <ul class="list-group mt-0 mb-4" id="dashboard-movimentacoes-crm" style="overflow-x: hidden;overflow-y: scroll;height: 43vh;">
+                                 <li class="list-group-item"><span class="" id="transferir-atendimento_2">Transferir entre atendentes </span></li>
+                             </ul>
+                             <div class="d-grid gap-2">
+                             </div>
+                             </div>
+                             </div>
+                     </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+                </div>
+       </div>
+
+    </div>
+
+    <script  src="/assets/jquery.min.js"></script>
+    <script  src="/assets/bootstrap.bundle.min.js"></script>
+    <script  src="/assets/chartjs.min.js"></script>
+    <script type="module" crossorigin src="/assets/dashboard.js"></script>
+</body>
+</html>
